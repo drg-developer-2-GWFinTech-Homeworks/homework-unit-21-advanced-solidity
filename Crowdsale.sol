@@ -43,8 +43,8 @@ contract PupperCoinSaleDeployer {
     constructor(
         string memory name,
         string memory symbol,
-        address payable wallet
-    )
+        address payable wallet,
+        uint256 goal)
         public
     {
         // create the PupperCoinSale and tell it about the token, set the goal, and set the open and close times to now and now + 24 weeks.
@@ -56,9 +56,8 @@ contract PupperCoinSaleDeployer {
 
         uint256 rate = 1;
         uint256 openingTime = now;
-        uint256 closingTime = now + 24 weeks;
+        uint256 closingTime = now + 7 minutes;
         uint256 cap = 300;
-        uint256 goal = 300;
 
 
         PupperCoinSale pupper_sale = new PupperCoinSale(
